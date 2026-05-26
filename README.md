@@ -2,9 +2,6 @@
 
 **CausalCoach** is a free, open-source web application that estimates the causal impact of a campaign or intervention using a simple interrupted time series model.
 
-👉 **Live demo:**
-[![Streamlit App](causal-coach.streamlit.app)
-
 ---
 
 ## 🎯 What it does
@@ -36,16 +33,16 @@ Your CSV must have **at least two columns**:
 
 ## 🚀 How to use (public version)
 
-1. Visit the **[live app](causal-coach.streamlit.app)**.
-2. Upload your CSV file.
-3. Pick the campaign start date.
-4. Click **Run Causal Analysis**.
-5. View the counterfactual plot, effect metrics, and probability.
-6. (Optional) Download a PDF report.
+1. Visit https://causal-coach.streamlit.app/
+3. Upload your CSV file.
+4. Pick the campaign start date.
+5. Click **Run Causal Analysis**.
+6. View the counterfactual plot, effect metrics, and probability.
+7. (Optional) Download a PDF report.
 
 ---
 
-## 💻 Run locally (for developers)
+## 💻 Run locally
 
 ### 1. Clone the repository
 
@@ -68,15 +65,13 @@ streamlit run app.py
 
 ### 4. Open in browser
 
-Visit:
-
 ```text
 http://localhost:8501
 ```
 
 ---
 
-## 🧠 How it works (short explanation)
+## 🧠 How it works
 
 The tool fits a linear regression model to the pre-campaign period:
 
