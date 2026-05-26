@@ -1,0 +1,32 @@
+name: Keep App Awake with Playwright
+
+on:
+  schedule:
+    - cron: '0 0,12 * * *'
+  workflow_dispatch:
+
+jobs:
+  wake-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install Playwright dependencies
+        run: |
+          pip install playwright
+          playwright install chromium
+      - name: Visit app to wake it up
+        run: |
+          python -c "
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              browser = p.chromium.launch(headless=True)
+              page = browser.new_page()
+              page.goto('https://causal-coach.streamlit.app/', timeout=60000)
+              print('Page title:', page.title())
+              browser.close()
+          "
