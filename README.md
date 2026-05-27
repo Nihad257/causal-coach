@@ -105,7 +105,7 @@ Uncertainty is quantified with:
 - statsmodels
 - plotly
 - scipy
-- fpdf *(optional, for PDF reports)*
+
 
 See `requirements.txt` for exact versions.
 
