@@ -11,7 +11,8 @@ st.title("📈 CausalCoach – Did your campaign really work?")
 uploaded_file = st.file_uploader("Upload CSV (must have columns: date, y)", type="csv")
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-    df['date'] = pd.to_datetime(df['date'])
+df['date'] = pd.to_datetime(df['date'], format='mixed', dayfirst=True, errors='coerce')
+df = df.dropna(subset=['date'])
     st.dataframe(df.head())
     
     campaign_date = st.date_input("Campaign start date",
