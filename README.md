@@ -38,7 +38,7 @@ Your CSV must have **at least two columns**:
 4. Pick the campaign start date.
 5. Click **Run Causal Analysis**.
 6. View the counterfactual plot, effect metrics, and probability.
-7. (Optional) Download a PDF report.
+
 
 ---
 
