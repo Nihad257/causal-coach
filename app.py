@@ -1,7 +1,4 @@
 import streamlit as st
-st.warning("⚠️ Upgraded version available → https://causal-coach.vercel.app")
-st.stop()
-import streamlit as st
 import pandas as pd
 import numpy as np
 import statsmodels.api as sm
